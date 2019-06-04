@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/spandan/CLionProjects/xmlWriter/main.cpp
+iostream
+-
+xmlWriter.h
+/home/spandan/CLionProjects/xmlWriter/xmlWriter.h
+
+/home/spandan/CLionProjects/xmlWriter/xmlWriter.cpp
+xmlWriter.h
+/home/spandan/CLionProjects/xmlWriter/xmlWriter.h
+
+/home/spandan/CLionProjects/xmlWriter/xmlWriter.h
+vector
+-
+string
+-
+fstream
+-
+iostream
+-
+

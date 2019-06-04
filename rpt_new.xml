@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<!-- This is a comment-->
+<diagnosticReport>
+	<dateTime>27/1/2019,00:00:00</dateTime>
+	<dataName>Coupon1_reduced_03_06.dat</dataName>
+	<numberOfDamages>0</numberOfDamages>
+	<damageId></damageId>
+	<Location>zone1</Location>
+	<Severity></Severity>
+</diagnosticReport>

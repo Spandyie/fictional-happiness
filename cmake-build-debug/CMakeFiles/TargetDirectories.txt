@@ -1,0 +1,3 @@
+/home/spandan/CLionProjects/xmlWriter/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/spandan/CLionProjects/xmlWriter/cmake-build-debug/CMakeFiles/xmlWriter.dir
+/home/spandan/CLionProjects/xmlWriter/cmake-build-debug/CMakeFiles/edit_cache.dir
