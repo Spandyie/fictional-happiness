@@ -11,10 +11,10 @@ iostream
 -
 xmlWriter.h
 /home/spandan/CLionProjects/xmlWriter/xmlWriter.h
-
-/home/spandan/CLionProjects/xmlWriter/xmlWriter.cpp
-xmlWriter.h
-/home/spandan/CLionProjects/xmlWriter/xmlWriter.h
+stdexcept
+-
+regex
+-
 
 /home/spandan/CLionProjects/xmlWriter/xmlWriter.h
 vector
