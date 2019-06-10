@@ -4,24 +4,12 @@
 
 #include "xmlWriter.h"
 
-//=============================================================================
-//== Description
-//== --------------------------------------------------------------------------
-//== This function is used to check if the XML file exists
-//=============================================================================
-
 
 bool xmlWriter::exist(const std::string fileName){
     std::fstream checkFile(fileName);
     return checkFile.is_open();
 }
-//=============================================================================
-//== Function Name  :   XmlWriter::open
-//== Description
-//== --------------------------------------------------------------------------
-//== This function is used to open the XML file, first checking to see if it
-//== exists first
-//=============================================================================
+
 bool xmlWriter::open(const std::string strFile) {
 
     if (exist(strFile)){
@@ -42,12 +30,7 @@ bool xmlWriter::open(const std::string strFile) {
 
     return false;
 }
-//=============================================================================
 
-//== Description
-//== --------------------------------------------------------------------------
-//== This function is used to close the XML file
-//=============================================================================
 void xmlWriter::close() {
     if (outFile.is_open()) {
         outFile.close();
@@ -57,13 +40,7 @@ void xmlWriter::close() {
     }
 
 }
-//=============================================================================
-//== Function Name  :   XmlWriter::writeOpenTag
-//== Description
-//== --------------------------------------------------------------------------
-//== This function creates a new tag, checking that the file is open, and saves
-//== the tag name in a vector to keep track of it
-//=============================================================================
+
 void xmlWriter::writeOpenTag(const std::string openTag) {
     if (outFile.is_open()) {
         for (int i = 0; i < current_indent; i++) {
@@ -79,12 +56,7 @@ void xmlWriter::writeOpenTag(const std::string openTag) {
         std::cout << "File is closed. Unable to write to file.\n";
     }
 }
-//=============================================================================
-//== Function Name  :   XmlWriter::writeCloseTag
-//== Description
-//== --------------------------------------------------------------------------
-//== This function closes the currently open tag
-//=============================================================================
+
 void xmlWriter::writeCloseTag() {
     if (outFile.is_open()) {
         current_indent -= 1;
@@ -99,12 +71,7 @@ void xmlWriter::writeCloseTag() {
         std::cout << "File is closed. Unable to write to file.\n";
     }
 }
-//=============================================================================
-//== Function Name  :   XmlWriter::writeStartElementTag
-//== Description
-//== --------------------------------------------------------------------------
-//== This function creates a new element tag and saves the name to a vector
-//=============================================================================
+
 void xmlWriter::writeStartElementTag(const std::string elementTag) {
     if (outFile.is_open()) {
         for (int i = 0; i < current_indent; i++) {
@@ -119,12 +86,8 @@ void xmlWriter::writeStartElementTag(const std::string elementTag) {
         std::cout << "File is closed. Unable to write to file.\n";
     }
 }
-//=============================================================================
-//== Function Name  :   XmlWriter::writeEndElementTag
-//== Description
-//== --------------------------------------------------------------------------
-//== This function closed the currently opened element tag
-//=============================================================================
+
+
 void xmlWriter::writeEndElementTag() {
     if (outFile.is_open()) {
         outFile << "</" << tempElementTag[openElements - 1] << ">\n";
@@ -135,13 +98,8 @@ void xmlWriter::writeEndElementTag() {
         std::cout << "File is closed. Unable to write to file.\n";
     }
 }
-//=============================================================================
-//== Function Name  :   XmlWriter::writeAttribute
-//== Description
-//== --------------------------------------------------------------------------
-//== This function writes an attribute (if any) after the element tag is first
-//== opened and before the output for the element is written
-//=============================================================================
+
+
 void xmlWriter::writeAttribute(const std::string outAttribute) {
     if (outFile.is_open()) {
         outFile << " " << outAttribute;
@@ -150,11 +108,7 @@ void xmlWriter::writeAttribute(const std::string outAttribute) {
         std::cout << "File is closed. Unable to write to file.\n";
     }
 }
-//=============================================================================
-//== Function Name  :   XmlWriter::writeString
-//== Description
-//== --------------------------------------------------------------------------
-//=============================================================================
+
 void xmlWriter::writeString(const std::string outString) {
     if (outFile.is_open()) {
         outFile << ">" << outString;
@@ -163,13 +117,6 @@ void xmlWriter::writeString(const std::string outString) {
         std::cout << "File is closed. Unable to write to file.\n";
     }
 }
-
-//=============================================================================
-//== Function Name  :   XmlWriter::writeComment
-//== Description
-//== --------------------------------------------------------------------------
-//=============================================================================
-// This function writes the comment to the xml file
 
 
 void xmlWriter::writeComment(const std::string commentString) {
